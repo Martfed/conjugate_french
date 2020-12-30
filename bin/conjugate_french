@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'conjugate_french'
+
+ConjugateFrench::ConjugateCLI.start(ARGV)
