@@ -1,8 +1,8 @@
 # ConjugateFrench
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/conjugate_french`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+I always found the french language a difficult one. Specially if it's not your mother tongue.
+I often find myself going on google and find how to conjugate a specific verb.
+With ConjugateFrench you can quickly see the conjugations of a french verbe in your terminal.
 
 ## Installation
 
@@ -22,7 +22,66 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After installation run:
+
+    $ conjugate_french verbe [verb you want to conjugate in its infinitive form]
+
+output:
+```
+    +------+---------+---------------+-----------+------------------+--------------+-----------------+--------------+-----------------+
+    |                                                     Verbe Courir Indicatif                                                      |
+    +------+---------+---------------+-----------+------------------+--------------+-----------------+--------------+-----------------+
+    |      | présent | passé composé | imparfait | plus-que-parfait | passé simple | passé antérieur | futur simple | futur antérieur |
+    +------+---------+---------------+-----------+------------------+--------------+-----------------+--------------+-----------------+
+    | Je   | cours   | couru         | courais   | couru            | courus       | couru           | courrai      | couru           |
+    | Tu   | cours   | couru         | courais   | couru            | courus       | couru           | courras      | couru           |
+    | Il   | court   | couru         | courait   | couru            | courut       | couru           | courra       | couru           |
+    | Nous | courons | couru         | courions  | couru            | courûmes     | couru           | courrons     | couru           |
+    | Vous | courez  | couru         | couriez   | couru            | courûtes     | couru           | courrez      | couru           |
+    | Ils  | courent | couru         | couraient | couru            | coururent    | couru           | courront     | couru           |
+    +------+---------+---------------+-----------+------------------+--------------+-----------------+--------------+-----------------+
+    +------+----------+-------+-------------+------------------+
+    |                 Verbe Courir Subjonctif                  |
+    +------+----------+-------+-------------+------------------+
+    |      | présent  | passé | imparfait   | plus-que-parfait |
+    +------+----------+-------+-------------+------------------+
+    | Je   | coure    | couru | courusse    | couru            |
+    | Tu   | coures   | couru | courusses   | couru            |
+    | Il   | coure    | couru | courût      | couru            |
+    | Nous | courions | couru | courussions | couru            |
+    | Vous | couriez  | couru | courussiez  | couru            |
+    | Ils  | courent  | couru | courussent  | couru            |
+    +------+----------+-------+-------------+------------------+
+    +------+------------+------------------+------------------+
+    |                Verbe Courir Conditionnel                |
+    +------+------------+------------------+------------------+
+    |      | présent    | passé 1ère forme | passé 2ème forme |
+    +------+------------+------------------+------------------+
+    | Je   | courrais   | couru            | couru            |
+    | Tu   | courrais   | couru            | couru            |
+    | Il   | courrait   | couru            | couru            |
+    | Nous | courrions  | couru            | couru            |
+    | Vous | courriez   | couru            | couru            |
+    | Ils  | courraient | couru            | couru            |
+    +------+------------+------------------+------------------+
+    +------+---------+-------+
+    | Verbe Courir Impératif |
+    +------+---------+-------+
+    |      | présent | passé |
+    +------+---------+-------+
+    |      | cours   | couru |
+    |      | courons | couru |
+    |      | courez  | couru |
+    +------+---------+-------+
+    +-----+---------+--------+
+    | Verbe Courir Participe |
+    +-----+---------+--------+
+    |     | présent | passé  |
+    +-----+---------+--------+
+    |     | courant | courue |
+    |     |         | couru  |
+    +-----+---------+--------+
+```
 
 ## Development
 

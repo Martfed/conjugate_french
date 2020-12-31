@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Martfed']
   spec.email         = ['federicodm90@gmail.com']
 
-  spec.summary       = 'Conjugate to quickly conjugate french verbes'
+  spec.summary       = 'ConjugateFrench to quickly conjugate french verbes and see it in your terminal'
   spec.homepage      = 'https://rubygems.org/gems/conjugate_french'
   spec.license       = 'MIT'
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.metadata      = { 'source_code_uri' => 'https://github.com/Martfed/conjugate_french' }
   spec.add_dependency 'json'
   spec.add_dependency 'terminal-table'
   spec.add_dependency 'thor'
