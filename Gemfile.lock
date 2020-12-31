@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conjugate_french (0.1.1)
+    conjugate_french (0.1.2)
       json
       terminal-table
       thor

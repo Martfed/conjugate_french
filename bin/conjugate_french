@@ -2,4 +2,8 @@
 
 require 'conjugate_french'
 
-ConjugateFrench::ConjugateCLI.start(ARGV)
+if ARGV.size == 1
+  puts 'please add a correct verb after the verbe method call'
+else
+  ConjugateFrench::ConjugateCLI.start(ARGV)
+end

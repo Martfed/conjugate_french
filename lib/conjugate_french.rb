@@ -16,7 +16,11 @@ module ConjugateFrench
         verb_list['infinitif']['présent'][0] == verb
       end
 
-      TENSES.each { |tense| puts table(tense, full_verb, verb) }
+      if full_verb.empty?
+        puts 'The verb you entered was not found. There is probably a typo.'
+      else
+        TENSES.each { |tense| puts table(tense, full_verb, verb) }
+      end
     end
 
     private
@@ -49,8 +53,6 @@ module ConjugateFrench
 
     def headings(tense, full_verb)
       [nil, full_verb[0][tense].keys]
-    rescue NoMethodError
-      'no verb found'
     end
   end
 end
