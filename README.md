@@ -22,9 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-After installation run:
+Run to view all the tenses of the verb:
 
-    $ conjugate_french verbe [verb you want to conjugate in its infinitive form]
+    $ conjugate_french conjugate verb:[verb you want to conjugate in its infinitive form]
 
 output:
 ```
@@ -81,6 +81,25 @@ output:
     |     | courant | courue |
     |     |         | couru  |
     +-----+---------+--------+
+```
+Run to view only one tense of the verb:
+
+    $ conjugate_french conjugate verb:[verb you want to conjugate in its infinitive form] tense:[specific tense]
+
+output:
+```
+    +------+----------+-------+--------------+------------------+
+    |                  Verbe Manger Subjonctif                  |
+    +------+----------+-------+--------------+------------------+
+    |      | présent  | passé | imparfait    | plus-que-parfait |
+    +------+----------+-------+--------------+------------------+
+    | Je   | mange    | mangé | mangeasse    | mangé            |
+    | Tu   | manges   | mangé | mangeasses   | mangé            |
+    | Il   | mange    | mangé | mangeât      | mangé            |
+    | Nous | mangions | mangé | mangeassions | mangé            |
+    | Vous | mangiez  | mangé | mangeassiez  | mangé            |
+    | Ils  | mangent  | mangé | mangeassent  | mangé            |
+    +------+----------+-------+--------------+------------------+
 ```
 
 ## Development
