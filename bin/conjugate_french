@@ -2,8 +2,9 @@
 
 require 'conjugate_french'
 
-if ARGV.size == 1
-  puts 'please add a correct verb after the verbe method call'
+case ARGV.size
+when 1
+  raise ArgumentError, 'please add a correct verb after the conjugate method call'
 else
-  ConjugateFrench::ConjugateCLI.start(ARGV)
+  puts ConjugateFrench::ConjugateCLI.start(ARGV)
 end

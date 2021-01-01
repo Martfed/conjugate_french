@@ -1,64 +1,14 @@
 require 'conjugate_french/version'
 require 'thor'
-require 'json'
-require 'terminal-table'
+require_relative './conjugate/tense'
 
 module ConjugateFrench
   class ConjugateCLI < Thor
     desc 'verbe VERB', 'finally know how to write french VERBS'
-    TENSES = %w[indicatif subjonctif conditionnel impératif participe].freeze
+    argument :opts, optional: true, type: :hash
 
-    def verbe(verb)
-      file = File.read('lib/verbs.json')
-      parsed_file = JSON.parse(file)
-
-      full_verb = parsed_file.select do |verb_list|
-        verb_list['infinitif']['présent'][0] == verb
-      end
-
-      final_output = output(full_verb, verb)
-      puts final_output
-      final_output
-    end
-
-    private
-
-    def table(tense, full_verb, verb)
-      tense_rows = persons(tense)
-
-      tense_headings = headings(tense, full_verb)
-
-      tense_rows.each_with_index do |person, index|
-        full_verb[0][tense].each { |row| person << row[1][index] }
-      end
-
-      tense = Terminal::Table.new(
-        title: "Verbe #{verb.capitalize} #{tense.capitalize}",
-        rows: tense_rows,
-        headings: tense_headings.flatten
-      )
-    end
-
-    def persons(tense)
-      if tense == 'impératif'
-        [[nil], [nil], [nil]]
-      elsif tense == 'participe'
-        [[nil], [nil]]
-      else
-        [['Je'], ['Tu'], ['Il'], ['Nous'], ['Vous'], ['Ils']]
-      end
-    end
-
-    def headings(tense, full_verb)
-      [nil, full_verb[0][tense].keys]
-    end
-
-    def output(full_verb, verb)
-      if full_verb.empty?
-        'The verb you entered was not found. There is probably a typo or the verb is not in the infinitive.'
-      else
-        TENSES.map { |tense| table(tense, full_verb, verb) }
-      end
+    def conjugate
+      ConjugateFrench::Tense.conjugate(opts['verb'], opts['tense'])
     end
   end
 end
